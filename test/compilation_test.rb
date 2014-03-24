@@ -39,7 +39,7 @@ class BrowserifyTest < ActionController::IntegrationTest
     File.open(File.join(Rails.root, 'app/assets/javascripts/foo.js'), 'w+') do |f|
       f.puts "module.exports = function (n) { return n * 12 }"
     end
-    expected_output = fixture("foo_changed.out.js")
+    expected_output = fixture("app_foo_changed.out.js")
 
     get "/assets/application.js"
     assert_response :success
