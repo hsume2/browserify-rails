@@ -3,7 +3,7 @@ var foo = require('./foo');
 
 },{"./foo":2}],2:[function(require,module,exports){
 require('./nested');
-module.exports = function (n) { return n * 11 }
+module.exports = function (n) { return n * 12 }
 
 },{"./nested":3}],3:[function(require,module,exports){
 module.exports.NESTED = true;

@@ -25,21 +25,9 @@ module BrowserifyRails
 
         deps = JSON.parse(run_command("#{module_deps_cmd} #{pathname}"))
         deps.each do |dep|
-          next if !dep['entry']
-          path = File.basename(dep['id'], context.environment.root)
-          next if path == File.basename(pathname)
+          next if dep['entry']
 
-          if path =~ /<([^>]+)>/
-            path = $1
-          else
-            path = "./#{path}" unless relative?(path)
-          end
-
-          context.depend_on_asset(path)
-
-          dep['deps'].each do |module_path, asset_path|
-            context.depend_on_asset(asset_path)
-          end
+          context.depend_on_asset(dep['id'])
         end
 
         params = "-d"

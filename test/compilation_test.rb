@@ -37,6 +37,7 @@ class BrowserifyTest < ActionController::IntegrationTest
     sleep 1
 
     File.open(File.join(Rails.root, 'app/assets/javascripts/foo.js'), 'w+') do |f|
+      f.puts "require('./nested');"
       f.puts "module.exports = function (n) { return n * 12 }"
     end
     expected_output = fixture("app_foo_changed.out.js")
