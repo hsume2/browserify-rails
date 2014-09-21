@@ -1,3 +1,9 @@
+# MOVED
+
+Further development of *browserify-rails* is now a community effort in the
+[browserify-rails organization repo](https://github.com/browserify-rails/browserify-rails). Please
+file issues at and send pull requests to the new repository.
+
 # browserify-rails
 
 [![Build Status](https://travis-ci.org/hsume2/browserify-rails.png?branch=master)](https://travis-ci.org/hsume2/browserify-rails)
